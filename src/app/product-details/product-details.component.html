@@ -1,0 +1,29 @@
+<section class="product-page">
+    <div class="container1">
+        <div class="image-container">
+            <div class="imge"></div>
+            <div class="imge4"></div>
+            <div class="imge"></div>
+            <div class="imge4"></div>
+            <div class="imge"></div>
+        </div>
+    </div>
+
+<div class="product-info" *ngIf="product">
+        <h1>{{product.name}}</h1>
+        <h2>${{product.price}}</h2>
+    <button (click)='addToCart(product)' class="button2">Buy It Now</button>    
+    <a [routerLink]="['/cart']" class="button1">Checkout</a>
+<div class="description-buttons">
+    <button class="Description">Description</button>
+    <p class="extra-info">{{product.desc}}</p>
+    <button class="Sizing"> Sizing</button>
+    <p class="extra-info"></p>
+    <button class="Shipping"> Shipping</button>
+    <p class="extra-info"></p>
+</div>
+
+</div>
+</section>
+<!-- <a [routerLink]="['/checkout', 1]">Checkout</a> -->
+

@@ -1,0 +1,54 @@
+<header>
+    <div class="container">
+        <!-- Below is code for animated slideshow for the background images on the first page -->
+            <!-- <div class="slideshow-container">
+    
+                    <div class="mySlides fade">
+                      <img src="images/desert.jpg" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img_snow_wide.jpg" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img_mountains_wide.jpg" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+                    
+                    </div> -->
+                    <a href="index.html"><img src="../assets/logo.png" width="200px" alt="placeholder-logo" class="logo"></a>
+            <input type="checkbox"  id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a [routerLink]="['/all-products']">Shoes</a></li>
+                <li><a href="#">Fixed Designs</a></li>
+                <li><a href="#">Send in Design</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="i-tags">
+            <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+            <a href="#" class="bag"><i class="fas fa-shopping-bag"></i></a>
+        </div>  
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </div>
+    </header>
+
+    <section class="main-products">
+        <div class="products">
+        <h1 class="title">SHOES</h1>
+            <a  [title]="a.name" *ngFor="let a of products" 
+                [routerLink]="['/products', a.id]" class="{{a.class}}">
+                <img src="{{a.img}}" height="250px" width="250px"/>
+                <div class="box"> <span>{{ a.name}} Price: {{a.price}}</span> </div></a>
+        
+        </div>
+
+
+    </section>
+

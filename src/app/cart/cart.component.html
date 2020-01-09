@@ -1,0 +1,55 @@
+<header>
+    <div class="container">
+         <!-- Below is code for animated slideshow for the background images on the first page -->
+            <!-- <div class="slideshow-container">
+    
+                    <div class="mySlides fade">
+                      <img src="images/desert.jpg" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img_snow_wide.jpg" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img_mountains_wide.jpg" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+                    
+                    </div> -->
+           <a href="index.html"><img src="../assets/logo.png" width="200px" alt="placeholder-logo" class="logo"></a>
+            <input type="checkbox"  id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a [routerLink]="['/all-products']">Shoes</a></li>
+                <li><a href="#">Fixed Designs</a></li>
+                <li><a href="#">Send in Design</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="i-tags">
+            <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+            <a href="#" class="bag"><i class="fas fa-shopping-bag"></i></a>
+        </div>  
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </div>
+    </header>
+<div class="cart">
+<h3>Shopping Cart</h3>
+<div *ngFor='let item of items' class="cart-items">
+    <span class="item1">{{item.name}}</span> <br>
+    <span class="item2">{{item.desc}}</span> <br>
+    <span class="item3">Price: {{item.price}}</span> <br>
+    <img class="item4" src="{{item.img}}" alt="" width="200px">
+</div>
+<button (click)='clearCart()'>Delete</button>
+<button (click)="openCheckout()">Purchase</button>
+</div>
+
+
+
+
