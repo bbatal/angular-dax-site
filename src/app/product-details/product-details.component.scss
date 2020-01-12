@@ -1,0 +1,663 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.image {
+    background-image: url("../../assets//desert.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: #464646;
+}
+
+header {
+    /* background: #55d6aa; */
+    text-align: left;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+}
+
+nav {
+    position: absolute;
+    text-align: right;
+    top: 70%;
+    right: 7em;
+    /*background: #55d6aa;*/
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 9em;
+    margin-bottom: 1em;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: grey;
+}
+
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 16em;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+.section-2 {
+    background-color: white;
+}
+
+.new-products {
+    display: grid;
+    margin: 0 auto;
+    height: 100vh;
+    grid-gap: 0px 10vh;
+    grid-template-columns: 0.3fr 3fr 3fr 3fr 0.3fr;
+    grid-template-rows: 1.5fr 3fr 3fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". img img writing ."
+        ". img img writing ."
+        ". . . . .";
+
+}
+.first-div {
+    grid-area: img;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.pic1 {
+    background: url("../../assets//skateboard.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    z-index: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: 15vh;
+    width: 70%;
+
+}
+
+.pic2 {
+    background: url("../../assets//converse.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    height: 130%;
+}
+
+/* .new-products .first-div .pic1 {
+    position: relative;
+    z-index: 3;
+    margin-top: 130px;
+    margin-left: 30px;
+}
+
+.new-products .first-div .pic2 {
+    position: relative;
+    z-index: 1;
+    margin-top: -60%;
+    margin-left: 355px;
+} */
+
+.second-div {
+    grid-area: writing;
+    text-align: center;
+    font-size: 1.3rem; 
+    align-self: center;  
+    font-size: 130%; 
+}
+
+.second-div h1 {
+    font-weight: 900;
+}
+
+.section-3 {
+    height: 40vh;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.marquee {
+    width: 100%;
+    line-height: 50px;
+    background-color: white;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.marquee p {
+    display: inline-block;
+    animation: marquee 23s linear infinite;
+}
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+.i-tags {
+    display: inline-block;
+    position: absolute;
+    right: 10em;
+    top: 5.7em;
+}
+
+.i-tags .heart {
+    margin-left: 1em;
+    margin-right: 1.5em;
+    color: black;
+}
+
+.i-tags .bag {
+    color: black;
+}
+
+.heart:hover {
+    color: grey;
+}
+
+.bag:hover {
+    color: grey;
+}
+
+.products {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr;
+    height: 150vh;
+    grid-gap: 10px;
+    grid-template-areas: 
+    " . header . "
+    "main main1 main2"
+    "main3 main4 main5";
+}
+.box {
+    padding: 20px;
+    font-size: 150%;    
+}
+
+
+.title {
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+    font-size: 4em;
+}
+
+.shoe-images {
+    grid-area: main; 
+    background: url("https://c.static-nike.com/a/../../assets//t_PDP_1280_v1/f_auto/dwdxxujeuznepjq3xcbp/force-1-cot-bootie-SRRgZB.jpg") center / cover;
+    height: 85%;
+    text-decoration: none;
+}
+
+.shoe-images1 {
+    grid-area: main1; 
+    background: url("https://c.static-nike.com/a/../../assets//t_PDP_1280_v1/f_auto/odhlk8ksqmstmdcjjyn0/air-force-1-shadow-shoe-n7WF4B.jpg") center / cover;
+    height: 85%;
+    text-decoration: none;
+}
+
+.shoe-images2 {
+    grid-area: main2; 
+    background: url("https://c.static-nike.com/a/../../assets//t_PDP_1280_v1/f_auto/a8ak9hnw9xy0atro3bx2/air-force-1-lv8-1-older-shoe-knSj1q.jpg") center / cover;
+    height: 85%;
+    text-decoration: none;
+}
+
+.shoe-images3 {
+    grid-area: main3; 
+    background: url("https://c.static-nike.com/a/../../assets//t_PDP_1280_v1/f_auto/n8uhqrq36wouqjaejzjd/air-force-1-07-lxx-shoe-4bMXgq.jpg") center / cover;
+    height: 85%;
+    text-decoration: none;
+}
+
+.shoe-images4 {
+    grid-area: main4; 
+    background: url("https://c.static-nike.com/a/../../assets//t_PDP_1280_v1/f_auto/cnpbavugjurghysmgfoa/force-1-se-and-shoe-nPSRWT.jpg") center / cover;
+    height: 85%;
+    text-decoration: none;
+}
+
+.shoe-images5 {
+    grid-area: main5; 
+    background: url("https://c.static-nike.com/a/../../assets//t_PDP_1280_v1/f_auto/bzzopsvmjq8cmrc2z4rr/air-force-1-older-shoe-KyTDGPmw.jpg") center / cover;
+    height: 85%;
+    text-decoration: none;
+}
+
+.box span {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    vertical-align: bottom;
+    color: black;
+    
+
+}
+
+.product-page {
+    display: grid;
+    grid-template-columns: 0.3fr 3fr 2fr 0.3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh;
+}
+
+.container1 {
+    width: 550px;
+    height: 700px;
+    overflow: hidden;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
+    align-self: start;
+    margin-top: 60px;
+}
+
+.image-container {
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.imge {
+    background: url("/../../assets//concrete.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    
+}
+.imge4 {
+    background: url("/../../assets//boots.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.image-container div {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.product-info {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.product-info h1{
+    font-size: 4rem;
+    width: 450px;
+    text-align: center;
+}
+
+.product-info h2{
+    font-size: 3rem;
+    width: 450px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.button1 {
+    width: 450px;
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 20px;
+    border-radius: 100px;
+    background-color: rgba($color:blue, $alpha: 0.3);
+}
+
+.button2 {
+    width: 450px;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    padding: 20px;
+    border-radius: 100px;
+    background-color: rgba($color:black, $alpha: 0.3);
+    margin-top: 20px;
+}
+
+.Description {
+    text-align: center;
+    width: 450px;
+    font-weight: 900;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: transparent;
+    border: 0px solid white;
+    margin-top: 30px;
+}
+
+.extra-info {
+    width: 450px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 50px;
+}
+
+.Sizing {
+    text-align: center;
+    width: 450px;
+    font-weight: 900;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: transparent;
+    border: 0px solid white;
+    margin-top: 30px;
+}
+
+.Shipping {
+    text-align: center;
+    width: 450px;
+    font-weight: 900;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: transparent;
+    border: 0px solid white;
+    margin-top: 30px;
+}
+
+@media (max-width: 775px) {
+    header {
+        text-align: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .second-page header {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .i-tags {
+        display: none;
+    }
+
+    .products {
+        grid-template-columns: 0.2fr 2fr 0.2fr;
+        grid-template-rows: 1fr repeat(6, 2fr);
+        height: 400vh;
+        grid-gap: 10px;
+        grid-template-areas: 
+        ". header ."
+        ". main ."
+        ". main1 ."
+        ". main2 ."
+        ". main3 ."
+        ". main4 ."
+        ". main5 .";
+    }
+
+    .new-products {
+        grid-gap: 2vh 0vh;
+        grid-template-columns: 0.1fr 3fr 0.1fr;
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+            ". . ."
+            ". img ."
+            ". writing .";
+    
+    }
+
+    .first-div {
+        grid-area: img;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .pic1 {
+        background: url("../../assets//skateboard.jpg");
+        background-size:contain;
+        background-repeat: no-repeat;
+        z-index: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-top: 10vh;
+        margin-left: 9.5vh;
+        width: 100%;
+    }
+    
+    .second-div {
+        grid-area: writing;
+        text-align: center; 
+        align-self: center;
+        justify-self: center;  
+        font-size: 125%; 
+        margin-top: 20vh;
+        width: 80%;
+    }
+
+    .product-page {
+        display: grid;
+        grid-template-columns: 3fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        height: 200vh;
+    }
+    .container1 {
+        width: 400px;
+        height: 700px;
+        overflow: hidden;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        justify-self: center;
+        align-self: start;
+        margin-top: 60px;
+    }
+
+    .product-info {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 6;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .product-info h1{
+        font-size: 4rem;
+        width: 450px;
+        text-align: center;
+    }
+    
+    .product-info h2{
+        font-size: 3rem;
+        width: 450px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    
+    .button1 {
+        width: 450px;
+        font-weight: 900;
+        font-size: 2rem;
+        padding: 0ox;
+        border-radius: 100px;
+        margin-top: 20px;
+        margin-left: 100px;
+    }
+    
+    .button2 {
+        width: 450px;
+        font-weight: 900;
+        font-size: 2rem;
+        color: white;
+        padding: 20px;
+        border-radius: 100px;
+        background-color: rgba($color:black, $alpha: 0.3);
+        margin-top: 20px 0;
+    }
+    
+    .Description {
+        text-align: center;
+        width: 450px;
+        font-weight: 900;
+        font-size: 1rem;
+        padding: 10px;
+        background-color: transparent;
+        border: 0px solid white;
+        margin-top: 30px;
+    }
+    
+    .extra-info {
+        width: 450px;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0 50px;
+    }
+    
+    .Sizing {
+        text-align: center;
+        width: 450px;
+        font-weight: 900;
+        font-size: 1rem;
+        padding: 10px;
+        background-color: transparent;
+        border: 0px solid white;
+        margin-top: 30px;
+    }
+    
+    .Shipping {
+        text-align: center;
+        width: 450px;
+        font-weight: 900;
+        font-size: 1rem;
+        padding: 10px;
+        background-color: transparent;
+        border: 0px solid white;
+        margin-top: 30px;
+    }
+    
+    
+}
+
+.button1 {
+    width: 450px;
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 0ox;
+    border-radius: 100px;
+    margin-top: 100px;
+    margin-left: 100px;
+    background-color: white;
+}
+
+.button2 {
+    width: 450px;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    padding: 20px;
+    border-radius: 100px;
+    background-color: rgba($color:black, $alpha: 0.3);
+    margin-top: 20px 0;
+}
